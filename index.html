@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance System - Advanced Web Programming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header>
+    <div class="header-content">
+      <div class="university">
+        <h2>University of Algiers 1</h2>
+        <p>Faculty of Science - Department of Computer Science</p>
+      </div>
+      
+      <div class="course-info">
+        <div><strong>Course:</strong> Advanced Web Programming</div>
+        <div><strong>Level:</strong> 2nd year Computer Science degree (CS)</div>
+        <div><strong>Academic Year:</strong> 2025/2026</div>
+      </div>
+
+      
+      <nav class="navbar">
+        <div class="logo">Attendance System</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Attendance List</a></li>
+          <li><a href="#">Add Student</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+  <div class="container">
+    <h2 class="section-title">Student Attendance</h2>
+    
+    
+    <div class="table-container">
+      <table id="StudentTable">
+        <thead>
+          <tr>
+            <th rowspan="2">Student ID</th>
+            <th rowspan="2">Last Name</th>
+            <th rowspan="2">First Name</th>
+            <th rowspan="2">Course</th>
+            <th colspan="6" class="session-header">Attendance (S1-S6)</th>
+            <th colspan="6" class="participation-header">Participation (P1-P6)</th>
+            <th rowspan="2">Message</th>
+          </tr>
+          <tr>
+            
+            <th>S1</th>
+            <th>S2</th>
+            <th>S3</th>
+            <th>S4</th>
+            <th>S5</th>
+            <th>S6</th>
+            
+            
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <th>P5</th>
+            <th>P6</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+    <h2 class="section-title">Add New Student</h2>
+    <div class="form-container">
+      <form id="studentForm">
+        <div class="form-group">
+          <label for="studentId">Student ID:</label>
+          <input type="number" id="studentId" name="studentId" required>
+          <div class="error" id="studentIdError">Student ID must contain only numbers</div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+          <div class="error" id="lastNameError">Last Name must contain only letters</div>
+        </div>
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+          <div class="error" id="firstNameError">First Name must contain only letters</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <div class="error" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <input type="text" id="course" name="course" required>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Add Student">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
