@@ -1,39 +1,22 @@
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f6f8;
-  color: #333;
+  background-color: #f9f9fb;
+  color: #2e2e2e;
   line-height: 1.6;
 }
 
-
 header {
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-  color: white;
+  background-color: #6a1b9a;
+  color: #ffffff;
   padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.university {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.course-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 1rem;
-  font-size: 0.85rem;
-}
-
 
 .navbar {
   display: flex;
@@ -45,6 +28,7 @@ header {
 .navbar .logo {
   font-weight: bold;
   font-size: 1.5rem;
+  color: #f3e5f5;
   margin-bottom: 0.5rem;
 }
 
@@ -59,7 +43,7 @@ header {
 
 .navbar ul li a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   font-size: 0.9rem;
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
@@ -67,7 +51,7 @@ header {
 }
 
 .navbar ul li a:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .container {
@@ -77,24 +61,23 @@ header {
 }
 
 .section-title {
-  color: #1a2a6c;
-  border-bottom: 2px solid #fdbb2d;
+  color: #6a1b9a;
+  border-bottom: 2px solid #ab47bc;
   padding-bottom: 0.5rem;
   margin-top: 2rem;
 }
-
 
 .table-container {
   overflow-x: auto;
   margin: 1rem 0;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #StudentTable {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background-color: #ffffff;
   min-width: 800px;
 }
 
@@ -106,22 +89,21 @@ th, td {
 }
 
 th {
-  background-color: #1a2a6c;
-  color: white;
+  background-color: #6a1b9a;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .session-header {
-  background-color: #2c3e50;
+  background-color: #8e24aa;
 }
 
 .participation-header {
-  background-color: #34495e;
+  background-color: #ba68c8;
 }
 
-
 .few-absences {
-  background-color: #e8f5e9; 
+  background-color: #e8f5e9;
 }
 
 .medium-absences {
@@ -132,12 +114,11 @@ th {
   background-color: #ffebee;
 }
 
-
 .form-container {
-  background-color: white;
+  background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: 2rem 0;
 }
 
@@ -155,47 +136,48 @@ form {
 label {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #1a2a6c;
+  color: #6a1b9a;
 }
 
 input[type="text"],
 input[type="number"],
 input[type="email"] {
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #bbb;
   border-radius: 4px;
   font-size: 1rem;
+  background-color: #fafafa;
+  color: #2e2e2e;
 }
 
 input[type="submit"] {
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f);
-  color: white;
+  background-color: #6a1b9a;
+  color: #ffffff;
   border: none;
   padding: 0.8rem;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
 input[type="submit"]:hover {
+  background-color: #4a148c;
   transform: translateY(-2px);
 }
 
 .error {
-  color: #e74c3c;
+  color: #d32f2f;
   font-size: 0.85rem;
   margin-top: 0.3rem;
   display: none;
 }
 
-
 input[type="checkbox"] {
   transform: scale(1.2);
   cursor: pointer;
 }
-
 
 @media (min-width: 768px) {
   .navbar {
@@ -216,7 +198,6 @@ input[type="checkbox"] {
     grid-column: 1 / -1;
   }
 }
-
 
 @media (min-width: 1024px) {
   .container {
