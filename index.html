@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Attendance System</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <header>
@@ -19,6 +20,12 @@
 
   <div class="container">
     <h2 class="section-title">Student Attendance</h2>
+
+    <div class="table-controls">
+      <button id="highlightExcellentBtn" class="control-btn highlight-btn">Highlight Excellent Students</button>
+      <button id="resetColorsBtn" class="control-btn reset-btn">Reset Colors</button>
+      <button id="showReportBtn" class="control-btn report-btn">Show Report</button>
+    </div>
 
     <div class="table-container">
       <table id="StudentTable">
@@ -42,8 +49,13 @@
         <tbody></tbody>
       </table>
     </div>
+
+    <div class="report-section">
+      <div id="reportResults" class="report-results" style="display: none;"></div>
+    </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
