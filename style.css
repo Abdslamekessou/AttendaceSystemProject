@@ -67,6 +67,58 @@ header {
   margin-top: 2rem;
 }
 
+/* Table Controls */
+.table-controls {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.highlight-btn {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+}
+
+.highlight-btn:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: white;
+}
+
+.reset-btn:hover {
+  background: linear-gradient(135deg, #f57c00, #e65100);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+}
+
+.report-btn {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+}
+
+.report-btn:hover {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
 .table-container {
   overflow-x: auto;
   margin: 1rem 0;
@@ -112,6 +164,72 @@ th {
 
 .many-absences {
   background-color: #ffebee;
+}
+
+/* Excellent Students Highlight */
+.excellent-student {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9) !important;
+  border-left: 4px solid #4caf50;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.excellent-pulse {
+  animation: excellentPulse 2s infinite;
+}
+
+@keyframes excellentPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    transform: scale(1);
+  }
+}
+
+.glow-effect {
+  animation: glow 1.5s ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    background-color: #e8f5e9;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    background-color: #c8e6c9;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+  }
+  100% {
+    background-color: #e8f5e9;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+}
+
+/* Clickable name styles */
+.student-name {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.student-name:hover {
+  background-color: #e3f2fd !important;
+  color: #1976d2;
+}
+
+.clickable-name {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clickable-name:hover {
+  background-color: #f0f8ff;
 }
 
 .form-container {
@@ -177,6 +295,152 @@ input[type="submit"]:hover {
 input[type="checkbox"] {
   transform: scale(1.2);
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+  transform: scale(1.4);
+}
+
+/* Report Styles */
+.report-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.report-results {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.chart-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* jQuery Effects */
+.row-highlight {
+  background-color: #e3f2fd !important;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#StudentTable tbody tr {
+  cursor: default;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Make checkbox cells clickable */
+.attendance-cell, .participation-cell {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.attendance-cell:hover, .participation-cell:hover {
+  background-color: #f0f0f0;
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* Modal Styles */
+.student-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content h3 {
+  color: #6a1b9a;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.modal-content button {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.modal-content button:hover {
+  background-color: #4a148c;
 }
 
 @media (min-width: 768px) {
@@ -188,6 +452,10 @@ input[type="checkbox"] {
   .navbar ul {
     flex-direction: row;
     gap: 1rem;
+  }
+
+  .table-controls {
+    flex-wrap: nowrap;
   }
 
   form {
