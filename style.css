@@ -1,478 +1,279 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9fb;
-  color: #2e2e2e;
-  line-height: 1.6;
-}
-
-header {
-  background-color: #6a1b9a;
-  color: #ffffff;
-  padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-.navbar .logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #f3e5f5;
-  margin-bottom: 0.5rem;
-}
-
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 0.9rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.navbar ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.section-title {
-  color: #6a1b9a;
-  border-bottom: 2px solid #ab47bc;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-}
-
-/* Table Controls */
-.table-controls {
-  display: flex;
-  gap: 1rem;
-  margin: 1.5rem 0;
-  flex-wrap: wrap;
-}
-
-.control-btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  min-width: 180px;
-}
-
-.highlight-btn {
-  background: linear-gradient(135deg, #4caf50, #45a049);
-  color: white;
-}
-
-.highlight-btn:hover {
-  background: linear-gradient(135deg, #45a049, #3d8b40);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
-}
-
-.reset-btn {
-  background: linear-gradient(135deg, #ff9800, #f57c00);
-  color: white;
-}
-
-.reset-btn:hover {
-  background: linear-gradient(135deg, #f57c00, #e65100);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
-}
-
-.report-btn {
-  background: linear-gradient(135deg, #2196f3, #1976d2);
-  color: white;
-}
-
-.report-btn:hover {
-  background: linear-gradient(135deg, #1976d2, #1565c0);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
-}
-
-.table-container {
-  overflow-x: auto;
-  margin: 1rem 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#StudentTable {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  min-width: 800px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 0.6rem;
-  text-align: center;
-  white-space: nowrap;
-}
-
-th {
-  background-color: #6a1b9a;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.session-header {
-  background-color: #8e24aa;
-}
-
-.participation-header {
-  background-color: #ba68c8;
-}
-
-.few-absences {
-  background-color: #e8f5e9;
-}
-
-.medium-absences {
-  background-color: #fff9c4;
-}
-
-.many-absences {
-  background-color: #ffebee;
-}
-
-/* Excellent Students Highlight */
-.excellent-student {
-  background: linear-gradient(135deg, #e8f5e9, #c8e6c9) !important;
-  border-left: 4px solid #4caf50;
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
-}
-
-.excellent-pulse {
-  animation: excellentPulse 2s infinite;
-}
-
-@keyframes excellentPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-    transform: scale(1.02);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-    transform: scale(1);
-  }
-}
-
-.glow-effect {
-  animation: glow 1.5s ease-in-out;
-}
-
-@keyframes glow {
-  0% {
-    background-color: #e8f5e9;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-  }
-  50% {
-    background-color: #c8e6c9;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
-  }
-  100% {
-    background-color: #e8f5e9;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-  }
-}
-
-/* Clickable name styles */
-.student-name {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.student-name:hover {
-  background-color: #e3f2fd !important;
-  color: #1976d2;
-}
-
-.clickable-name {
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.clickable-name:hover {
-  background-color: #f0f8ff;
-}
-
-.form-container {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
-}
-
-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #6a1b9a;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"] {
-  padding: 0.8rem;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  font-size: 1rem;
-  background-color: #fafafa;
-  color: #2e2e2e;
-}
-
-input[type="submit"] {
-  background-color: #6a1b9a;
-  color: #ffffff;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: transform 0.2s, background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-  background-color: #4a148c;
-  transform: translateY(-2px);
-}
-
-.error {
-  color: #d32f2f;
-  font-size: 0.85rem;
-  margin-top: 0.3rem;
-  display: none;
-}
-
-input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-input[type="checkbox"]:hover {
-  transform: scale(1.4);
-}
-
-/* Report Styles */
-.report-section {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.report-results {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.report-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.stat-card {
-  background: linear-gradient(135deg, #6a1b9a, #8e24aa);
-  color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
-}
-
-.stat-label {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-.chart-container {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* jQuery Effects */
-.row-highlight {
-  background-color: #e3f2fd !important;
-  transform: scale(1.01);
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-#StudentTable tbody tr {
-  cursor: default;
-  transition: all 0.2s ease;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Make checkbox cells clickable */
-.attendance-cell, .participation-cell {
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.attendance-cell:hover, .participation-cell:hover {
-  background-color: #f0f0f0;
-}
-
-/* Notification Styles */
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 1rem 1.5rem;
-  border-radius: 6px;
-  color: white;
-  font-weight: 600;
-  z-index: 1001;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-}
-
-/* Modal Styles */
-.student-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-}
-
-.modal-content h3 {
-  color: #6a1b9a;
-  margin-bottom: 1rem;
-}
-
-.modal-content p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-.modal-content button {
-  background-color: #6a1b9a;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-.modal-content button:hover {
-  background-color: #4a148c;
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .navbar ul {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .table-controls {
-    flex-wrap: nowrap;
-  }
-
-  form {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .form-group:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding: 2rem;
-  }
-
-  form {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .section-title {
+      color: #1a2a6c;
+      border-bottom: 2px solid #fdbb2d;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    #StudentTable {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      min-width: 800px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.6rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    th {
+      background-color: #1a2a6c;
+      color: white;
+      font-weight: 600;
+    }
+
+    .session-header {
+      background-color: #2c3e50;
+    }
+
+    .participation-header {
+      background-color: #34495e;
+    }
+
+    .few-absences {
+      background-color: #e8f5e9; 
+    }
+
+    .medium-absences {
+      background-color: #fff9c4;
+    }
+
+    .many-absences {
+      background-color: #ffebee;
+    }
+
+    /* Exercise 5: Hover effect */
+    .row-hover {
+      background-color: #e3f2fd !important;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Exercise 6: Excellent student highlight */
+    .excellent-student {
+      background-color: #c8e6c9 !important;
+      font-weight: bold;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: 2rem 0;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1a2a6c;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"] {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    input[type="submit"],
+    .btn {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: transform 0.2s;
+      margin: 0.5rem;
+    }
+
+    input[type="submit"]:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    /* Exercise 3: Success message */
+    .success-message {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+      display: none;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Exercise 4: Report section */
+    .report-section {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: 2rem 0;
+      display: none;
+    }
+
+    .report-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .chart-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .navbar ul {
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      form {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-group:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 2rem;
+      }
+
+      form {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
