@@ -1,61 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attendance System</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance System - Advanced Web Programming</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  
 </head>
 <body>
+  
   <header>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="logo">Attendance System</div>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="add-student.html">Add Student</a></li>
+        <li><a href="#">Attendance List</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
   <div class="container">
     <h2 class="section-title">Student Attendance</h2>
-
-    <div class="table-controls">
-      <button id="highlightExcellentBtn" class="control-btn highlight-btn">Highlight Excellent Students</button>
-      <button id="resetColorsBtn" class="control-btn reset-btn">Reset Colors</button>
-      <button id="showReportBtn" class="control-btn report-btn">Show Report</button>
+    
+    <!-- Exercise 4 & 6: Action buttons -->
+    <div class="button-group">
+      <button class="btn" id="showReportBtn">Show Report</button>
+      <button class="btn" id="highlightExcellentBtn">Highlight Excellent Students</button>
+      <button class="btn" id="resetColorsBtn">Reset Colors</button>
+    </div>
+    
+    <!-- Exercise 4: Report Section -->
+    <div class="report-section" id="reportSection">
+      <h3>Attendance Report</h3>
+      <div class="report-stats">
+        <div class="stat-card">
+          <div class="stat-label">Total Students</div>
+          <div class="stat-number" id="totalStudents">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Students Present</div>
+          <div class="stat-number" id="studentsPresent">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Students Participated</div>
+          <div class="stat-number" id="studentsParticipated">0</div>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="reportChart"></canvas>
+      </div>
     </div>
 
     <div class="table-container">
       <table id="StudentTable">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Course</th>
-            <th colspan="6" class="session-header">Sessions</th>
-            <th colspan="6" class="participation-header">Participation</th>
-            <th>Message</th>
+            <th rowspan="2">Student ID</th>
+            <th rowspan="2">Last Name</th>
+            <th rowspan="2">First Name</th>
+            <th rowspan="2">Course</th>
+            <th colspan="6" class="session-header">Attendance (S1-S6)</th>
+            <th colspan="6" class="participation-header">Participation (P1-P6)</th>
+            <th rowspan="2">Message</th>
           </tr>
           <tr>
-            <th colspan="4"></th>
-            <th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>S6</th>
-            <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th>
-            <th></th>
+            <th>S1</th>
+            <th>S2</th>
+            <th>S3</th>
+            <th>S4</th>
+            <th>S5</th>
+            <th>S6</th>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <th>P5</th>
+            <th>P6</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+        </tbody>
       </table>
     </div>
 
-    <div class="report-section">
-      <div id="reportResults" class="report-results" style="display: none;"></div>
+    <h2 class="section-title">Add New Student</h2>
+    
+    <!-- Exercise 3: Success message -->
+    <div class="success-message" id="successMessage">
+      Student added successfully!
+    </div>
+
+    <div class="form-container">
+      <form id="studentForm">
+        <div class="form-group">
+          <label for="studentId">Student ID:</label>
+          <input type="text" id="studentId" name="studentId" required>
+          <div class="error" id="studentIdError">Student ID must contain only numbers and cannot be empty</div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+          <div class="error" id="lastNameError">Last Name must contain only letters</div>
+        </div>
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+          <div class="error" id="firstNameError">First Name must contain only letters</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <div class="error" id="emailError">Please enter a valid email address (e.g., name@example.com)</div>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <input type="text" id="course" name="course" required>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Add Student">
+        </div>
+      </form>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
