@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  
 </head>
 <body>
   
@@ -29,7 +28,6 @@
       <button class="btn" id="resetColorsBtn">Reset Colors</button>
     </div>
     
-
     <div class="report-section" id="reportSection">
       <h3>Attendance Report</h3>
       <div class="report-stats">
@@ -51,7 +49,6 @@
       </div>
     </div>
 
-
     <div class="search-sort-container">
       <div class="search-box">
         <label for="searchInput">Search by Name:</label>
@@ -62,7 +59,6 @@
         <button class="btn" id="sortByParticipationBtn">Sort by Participation (Descending)</button>
       </div>
     </div>
-
 
     <div class="sort-status" id="sortStatus">
       Currently sorted by: Default order
@@ -102,7 +98,6 @@
 
     <h2 class="section-title">Add New Student</h2>
     
-
     <div class="success-message" id="successMessage">
       Student added successfully!
     </div>
@@ -145,14 +140,13 @@
     </div>
   </div>
 
-
   <div id="overlay"></div>
+
   <div id="popup">
-    <h3>Student Information</h3>
-    <div id="studentInfo"></div>
-    <button id="closePopup" class="btn">Close</button>
+    <div id="popupContent"></div>
+    <button id="closePopup">X</button>
   </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
